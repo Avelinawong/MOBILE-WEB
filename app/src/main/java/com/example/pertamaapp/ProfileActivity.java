@@ -68,20 +68,4 @@ public class ProfileActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_profile, menu);
     }
 
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        if(item.getItemId()==R.id.msimpan){
-            btnsubmit.performClick();
-            return true;
-        }else{
-            return super.onOptionsItemSelected(item)
-        }
-    }
-
-    public class ProfilActivity extends AppCompatActivity {
-        protected
-    }
-
-
 }
