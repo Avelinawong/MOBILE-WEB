@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id='@+id/msimpan'
+        android:title="Simpan" />
+
+    <item android:id='@+id/mpenagturan'
+        android:title="Pengaturan" />
+</menu>
