@@ -1,6 +1,8 @@
 package com.example.pertamaapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -26,8 +28,26 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
-        name=findViewById(R.id.name);
-        password=findViewById(R.id.password);
-        login=findViewById(R.id.buttonlog);
+        name = findViewById(R.id.name);
+        password = findViewById(R.id.password);
+        login = findViewById(R.id.buttonlog);
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toDashboard();
+            }
+        });
+
     }
+
+        public void toProfil(){
+            Intent intent = new Intent(this,ProfileActivity.class);
+            intent.putExtra("nama",name.getText().toString());
+            startActivity(intent);
+        }
+        public void toDashboard(){
+            Intent intent = new Intent(this,DashboardActivity.class);
+            startActivity(intent);
+        }
 }

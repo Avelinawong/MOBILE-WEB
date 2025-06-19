@@ -11,34 +11,72 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="15dp"
+        android:layout_marginTop="50dp"
         android:paddingRight="15dp"
+        android:paddingLeft="15dp"
         android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:paddingBottom="15dp">
 
         <EditText
             android:id="@+id/edtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Name"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.398"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="16dp" />
+            android:hint="Nama"
+            android:inputType="text" />
 
-        <EditText
-            android:id="@+id/edtProdi"
+        <TextView
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:hint="Program Studi"
-            tools:layout_editor_absoluteX="80dp"
-            tools:layout_editor_absoluteY="61dp" />
+            android:text="Jenis Kelamin" />
+
+        <RadioGroup
+            android:id="@+id/rdgJenisKelamin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rdbPria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pria" />
+            <RadioButton
+                android:id="@+id/rdbWanita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wanita" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hobi" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/ckbBelajar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belajar" />
+
+            <CheckBox
+                android:id="@+id/ckbMakan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Makan" />
+
+            <CheckBox
+                android:id="@+id/ckbTidur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tidur" />
+        </LinearLayout>
 
         <EditText
             android:id="@+id/edtEmail"
@@ -46,32 +84,46 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:hint="email@student.uph.edu"
-            tools:layout_editor_absoluteX="80dp"
-            tools:layout_editor_absoluteY="106dp" />
+            android:hint="email@student.uph.edu" />
+
+        <TextView
+            android:id="@+id/edtProdi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Program Studi" />
+
+        <Spinner
+            android:id="@+id/sprProdi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/edtNilai1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nilai Mata Kuliah 1"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal" />
 
         <EditText
             android:id="@+id/edtNilai2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nilai Mata Kuliah 2"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal" />
+
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:text="Submit" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Result"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="235dp" />
+            android:text="Result" />
 
         <TextView
             android:id="@+id/txtResult"
@@ -79,17 +131,6 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textSize="12pt"
-            android:text="Nama \nEmail \nProgram Studi \nIPK"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="276dp" />
-
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:text="Submit"
-            tools:layout_editor_absoluteX="140dp"
-            tools:layout_editor_absoluteY="151dp" />
-
+            android:text="Nama \nEmail \nProgram Studi \nIPK" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

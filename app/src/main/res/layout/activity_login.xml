@@ -7,17 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
         android:paddingRight="15dp"
         android:paddingLeft="15dp"
-        android:paddingBottom="15dp"
         android:paddingTop="15dp"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:paddingBottom="15dp"
+        >
 
         <EditText
             android:id="@+id/name"
@@ -33,12 +32,13 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
-            android:hint="Pasword"/>
+            android:hint="Password" />
 
         <Button
             android:id="@+id/buttonlog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
