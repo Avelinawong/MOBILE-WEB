@@ -111,6 +111,10 @@
                 android:background="@drawable/menu1">
             </LinearLayout>
         </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtmahasiswa"
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

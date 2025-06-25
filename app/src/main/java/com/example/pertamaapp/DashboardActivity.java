@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,10 +15,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.pertamaapp.model.mahasiswa;
 import com.google.android.material.navigation.NavigationView;
+
+import io.realm.Realm;
 
 public class DashboardActivity extends AppCompatActivity {
     LinearLayout llyProfil,llyTodolist;
+    TextView txtmahasiswa;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     @Override
@@ -30,6 +35,13 @@ public class DashboardActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        txtmahasiswa=findViewById(R.id.txtmahasiswa)
+        Realm realm = Realm.getDefaultInstance();
+        mahasiswa mhs = realm.where(mahasiswa.class).findFirst();
+        if (mhs != null) {
+            txtmahasiswa.setText(mhs.toString());
+        }
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         llyProfil= findViewById(R.id.llyProfil);

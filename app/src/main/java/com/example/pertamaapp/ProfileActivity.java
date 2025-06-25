@@ -14,12 +14,17 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Spinner;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.pertamaapp.model.mahasiswa;
+
+import io.realm.Realm;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -96,15 +101,31 @@ public class ProfileActivity extends AppCompatActivity {
             String hobi="";
             if(rdbWanita.isChecked()) jenisKelamin= rdbWanita.getText().toString();
             else if(rdbPria.isChecked()) jenisKelamin= rdbPria.getText().toString();
+            String jk=jenisKelamin;
 
             if(ckbBelajar.isChecked()) hobi += ckbBelajar.getText().toString()+"; ";
             if(ckbMakan.isChecked()) hobi += ckbMakan.getText().toString()+"; ";
             if(ckbTidur.isChecked()) hobi += ckbTidur.getText().toString()+"; ";
+            String hobby=hobi;
 
             result.setText(nama + "("+jenisKelamin+")"+
                     "\nHobi "+hobi
                     + "\n"+ email + "\nProgram Studi " + prodi + "\n" +
                     getNamaFakultas(prodi));
+
+            //simpan ke realm
+            Realm realm = Realm.getDefaultInstance();
+            realm.executeTransaction(r -> {
+                Number maxId = r.where(mahasiswa.class).max("studentid");
+                int nextId = (maxId == null) ? 1 : maxId.intValue() + 1;
+                mahasiswa mhs = r.createObject(mahasiswa.class, nextId);
+                mhs.setNama(nama);
+                mhs.setEmail(email);
+                mhs.setProgramstudi(prodi);
+                mhs.setJeniskelamin(jk);
+                mhs.setHobi(hobby);
+            });
+            Toast.makeText(this, "Data tersimpan", Toast.LENGTH_SHORT).show();
         }
     }
     String getNamaFakultas(String prodi){
